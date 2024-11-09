@@ -7,9 +7,14 @@ public class Level : MonoBehaviour {
     private const float PipeHeadHeight = 3.75f;
     
     public void Start() {
-        CreatePipe(20f,20f, true);
-        CreatePipe(40f,20f, false);
+        // CreatePipe(20f,20f, true);
+        // CreatePipe(40f,20f, false);
+        CreateGapPipes(50f, 20f, 20f);
+    }
 
+    private void CreateGapPipes(float gapY, float gapSize, float xPosition) {
+        CreatePipe(gapY - gapSize * 0.5f, xPosition, true);
+        CreatePipe(CameraOrthoSize * 2f - gapY - gapSize * 0.5f, xPosition, false);
     }
     
     private void CreatePipe(float height, float xPosition, bool createBottom) {
