@@ -7,11 +7,12 @@ public class Level : MonoBehaviour {
     private const float PipeWidth = 7.8f;
     private const float PipeHeadHeight = 3.75f;
     private const float PipeMoveSpeed = 3f;
+    private const float PipeDestroyXPosition = -100f;
 
-    private List<Pipe> pipeList;
+    private List<Pipe> _pipeList;
 
     private void Awake() {
-        pipeList = new List<Pipe>();
+        _pipeList = new List<Pipe>();
     }
 
     public void Start() {
@@ -23,8 +24,15 @@ public class Level : MonoBehaviour {
     }
 
     private void HandlePipeMovement() {
-        foreach (Pipe pipeTransform in pipeList) {
-            pipeTransform.Move();
+        for (int i = 0; i < _pipeList.Count; i++) {
+            Pipe pipe = _pipeList[i];
+            pipe.Move();
+            
+            if (pipe.GetXPosition() < PipeDestroyXPosition) {
+                pipe.DestroySelf();
+                _pipeList.Remove(pipe);
+                i--;
+            }
         }
     }
 
@@ -69,21 +77,30 @@ public class Level : MonoBehaviour {
         pipeBodyBoxCollider.offset = new Vector2(0f, height * 0.5f);
         
         Pipe pipe = new Pipe(pipeHead, pipeBody);
-        pipeList.Add(pipe);
+        _pipeList.Add(pipe);
     }
 
     private class Pipe {
-        private readonly Transform pipeHeadTransform;
-        private readonly Transform pipeBodyTransform;
+        private readonly Transform _pipeHeadTransform;
+        private readonly Transform _pipeBodyTransform;
 
         public Pipe(Transform pipeHeadTransform, Transform pipeBodyTransform) {
-            this.pipeHeadTransform = pipeHeadTransform;
-            this.pipeBodyTransform = pipeBodyTransform;
+            _pipeHeadTransform = pipeHeadTransform;
+            _pipeBodyTransform = pipeBodyTransform;
         }
 
         public void Move() {
-            pipeHeadTransform.position += new Vector3(-1, 0, 0) * PipeMoveSpeed * Time.deltaTime;
-            pipeBodyTransform.position += new Vector3(-1, 0, 0) * PipeMoveSpeed * Time.deltaTime;
+            _pipeHeadTransform.position += new Vector3(-1, 0, 0) * (PipeMoveSpeed * Time.deltaTime);
+            _pipeBodyTransform.position += new Vector3(-1, 0, 0) * (PipeMoveSpeed * Time.deltaTime);
+        }
+
+        public float GetXPosition() {
+            return _pipeHeadTransform.position.x;
+        }
+
+        public void DestroySelf() {
+            Destroy(_pipeHeadTransform.gameObject);
+            Destroy(_pipeBodyTransform.gameObject);
         }
     }
 };
