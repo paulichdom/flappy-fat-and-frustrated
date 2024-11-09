@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Level : MonoBehaviour {
@@ -5,11 +6,26 @@ public class Level : MonoBehaviour {
     private const float CameraOrthoSize = 50f;
     private const float PipeWidth = 7.8f;
     private const float PipeHeadHeight = 3.75f;
-    
+    private const float PipeMoveSpeed = 3f;
+
+    private List<Transform> pipeList;
+
+    private void Awake() {
+        pipeList = new List<Transform>();
+    }
+
     public void Start() {
-        // CreatePipe(20f,20f, true);
-        // CreatePipe(40f,20f, false);
         CreateGapPipes(50f, 20f, 20f);
+    }
+
+    public void Update() {
+        HandlePipeMovement();
+    }
+
+    private void HandlePipeMovement() {
+        foreach (Transform pipeTransform in pipeList) {
+            pipeTransform.position += new Vector3(-1, 0, 0) * (PipeMoveSpeed * Time.deltaTime);
+        }
     }
 
     private void CreateGapPipes(float gapY, float gapSize, float xPosition) {
@@ -30,6 +46,7 @@ public class Level : MonoBehaviour {
         }
         
         pipeHead.position = new Vector3(xPosition, pipeHeadYPosition);
+        pipeList.Add(pipeHead);
         
         // Set up Pipe Body
         Transform pipeBody = Instantiate(GameAssets.GetInstance().pfPipeBody);
@@ -44,6 +61,7 @@ public class Level : MonoBehaviour {
         }
         
         pipeBody.position = new Vector3(xPosition, pipeBodyYPosition);
+        pipeList.Add(pipeBody);
         
         SpriteRenderer pipeBodySpriteRenderer = pipeBody.GetComponent<SpriteRenderer>();
         pipeBodySpriteRenderer.size = new Vector2(PipeWidth, height);
