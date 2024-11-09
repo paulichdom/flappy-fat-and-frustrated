@@ -8,10 +8,10 @@ public class Level : MonoBehaviour {
     private const float PipeHeadHeight = 3.75f;
     private const float PipeMoveSpeed = 3f;
 
-    private List<Transform> pipeList;
+    private List<Pipe> pipeList;
 
     private void Awake() {
-        pipeList = new List<Transform>();
+        pipeList = new List<Pipe>();
     }
 
     public void Start() {
@@ -23,8 +23,8 @@ public class Level : MonoBehaviour {
     }
 
     private void HandlePipeMovement() {
-        foreach (Transform pipeTransform in pipeList) {
-            pipeTransform.position += new Vector3(-1, 0, 0) * (PipeMoveSpeed * Time.deltaTime);
+        foreach (Pipe pipeTransform in pipeList) {
+            pipeTransform.Move();
         }
     }
 
@@ -46,7 +46,6 @@ public class Level : MonoBehaviour {
         }
         
         pipeHead.position = new Vector3(xPosition, pipeHeadYPosition);
-        pipeList.Add(pipeHead);
         
         // Set up Pipe Body
         Transform pipeBody = Instantiate(GameAssets.GetInstance().pfPipeBody);
@@ -61,7 +60,6 @@ public class Level : MonoBehaviour {
         }
         
         pipeBody.position = new Vector3(xPosition, pipeBodyYPosition);
-        pipeList.Add(pipeBody);
         
         SpriteRenderer pipeBodySpriteRenderer = pipeBody.GetComponent<SpriteRenderer>();
         pipeBodySpriteRenderer.size = new Vector2(PipeWidth, height);
@@ -69,5 +67,23 @@ public class Level : MonoBehaviour {
         BoxCollider2D pipeBodyBoxCollider = pipeBody.GetComponent<BoxCollider2D>();
         pipeBodyBoxCollider.size = new Vector2(PipeWidth, height);
         pipeBodyBoxCollider.offset = new Vector2(0f, height * 0.5f);
+        
+        Pipe pipe = new Pipe(pipeHead, pipeBody);
+        pipeList.Add(pipe);
     }
-}
+
+    private class Pipe {
+        private readonly Transform pipeHeadTransform;
+        private readonly Transform pipeBodyTransform;
+
+        public Pipe(Transform pipeHeadTransform, Transform pipeBodyTransform) {
+            this.pipeHeadTransform = pipeHeadTransform;
+            this.pipeBodyTransform = pipeBodyTransform;
+        }
+
+        public void Move() {
+            pipeHeadTransform.position += new Vector3(-1, 0, 0) * PipeMoveSpeed * Time.deltaTime;
+            pipeBodyTransform.position += new Vector3(-1, 0, 0) * PipeMoveSpeed * Time.deltaTime;
+        }
+    }
+};
