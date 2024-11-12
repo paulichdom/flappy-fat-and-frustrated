@@ -1,0 +1,141 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5e6fedc2472449cead18ef23b5cb30d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Library:
+  - m_Name: Wing_Back
+    m_Hash: 656237268
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: slavek_wing_back_01
+      m_Hash: 446557720
+      m_Sprite: {fileID: 21300000, guid: dc75bced7b9f4cc4b97171b40d182995, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 21300000, guid: dc75bced7b9f4cc4b97171b40d182995, type: 3}
+    - m_Name: slavek_wing_back_02
+      m_Hash: 60080034
+      m_Sprite: {fileID: 21300000, guid: 83096ce247cc53242994208a90362a9c, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 21300000, guid: 83096ce247cc53242994208a90362a9c, type: 3}
+    - m_Name: slavek_wing_back_03
+      m_Hash: 882085684
+      m_Sprite: {fileID: 21300000, guid: 76224848ee1d0e24883736a596f55c6c, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 21300000, guid: 76224848ee1d0e24883736a596f55c6c, type: 3}
+    - m_Name: slavek_wing_back_04
+      m_Hash: 720837271
+      m_Sprite: {fileID: 21300000, guid: 0ed8645e6d19fe943a067465a435a2b8, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 21300000, guid: 0ed8645e6d19fe943a067465a435a2b8, type: 3}
+    - m_Name: slavek_wing_back_05
+      m_Hash: 502278657
+      m_Sprite: {fileID: 21300000, guid: aa692031c8a16f14ab20969f44391862, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 21300000, guid: aa692031c8a16f14ab20969f44391862, type: 3}
+    - m_Name: slavek_wing_back_06
+      m_Hash: 83459003
+      m_Sprite: {fileID: 21300000, guid: 9b5fd6a00048e5f4dbc9d7f8eef5d5f5, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 21300000, guid: 9b5fd6a00048e5f4dbc9d7f8eef5d5f5, type: 3}
+    - m_Name: slavek_wing_back_07
+      m_Hash: 872303405
+      m_Sprite: {fileID: 21300000, guid: 15bc5750897397c4d853e9d0d0f19403, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 21300000, guid: 15bc5750897397c4d853e9d0d0f19403, type: 3}
+    - m_Name: slavek_wing_back_08
+      m_Hash: 591484604
+      m_Sprite: {fileID: 21300000, guid: 53e80219d65a88e45affc1a8152a144f, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 21300000, guid: 53e80219d65a88e45affc1a8152a144f, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 8
+  - m_Name: Wing_Front
+    m_Hash: 120717975
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: slavek_wing_front_01
+      m_Hash: 274184398
+      m_Sprite: {fileID: 21300000, guid: f1217bf6550d97642a583efc8e8843a1, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 21300000, guid: f1217bf6550d97642a583efc8e8843a1, type: 3}
+    - m_Name: slavek_wing_front_02
+      m_Hash: 157215092
+      m_Sprite: {fileID: 21300000, guid: 3adb966dae737b249b557aa8910b6cef, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 21300000, guid: 3adb966dae737b249b557aa8910b6cef, type: 3}
+    - m_Name: slavek_wing_front_03
+      m_Hash: 1046075874
+      m_Sprite: {fileID: 21300000, guid: 2e88edd1cd840ce4d9ebf237bf564ecc, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 21300000, guid: 2e88edd1cd840ce4d9ebf237bf564ecc, type: 3}
+    - m_Name: slavek_wing_front_04
+      m_Hash: 540888129
+      m_Sprite: {fileID: 21300000, guid: 68ddac138e763434b8cb4d6b085c142c, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 21300000, guid: 68ddac138e763434b8cb4d6b085c142c, type: 3}
+    - m_Name: slavek_wing_front_05
+      m_Hash: 389709015
+      m_Sprite: {fileID: 21300000, guid: 6706f829a0e460844afe428114e76195, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 21300000, guid: 6706f829a0e460844afe428114e76195, type: 3}
+    - m_Name: slavek_wing_front_06
+      m_Hash: 238234989
+      m_Sprite: {fileID: 21300000, guid: 363d5f76537cd5143996b12ba42ab0ce, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 21300000, guid: 363d5f76537cd5143996b12ba42ab0ce, type: 3}
+    - m_Name: slavek_wing_front_07
+      m_Hash: 959716859
+      m_Sprite: {fileID: 21300000, guid: 9ce556ba1a55d00448a97553e61f5e73, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 21300000, guid: 9ce556ba1a55d00448a97553e61f5e73, type: 3}
+    - m_Name: slavek_wing_front_08
+      m_Hash: 696975466
+      m_Sprite: {fileID: 21300000, guid: 5e8c6ab30c821d24b8ed8e582237c539, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 21300000, guid: 5e8c6ab30c821d24b8ed8e582237c539, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 8
+  - m_Name: Body
+    m_Hash: 999990412
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: slavek_body
+      m_Hash: 497646719
+      m_Sprite: {fileID: 21300000, guid: 204466afea251a34bb03e476783a8455, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 21300000, guid: 204466afea251a34bb03e476783a8455, type: 3}
+    - m_Name: slavek_leggies
+      m_Hash: 472815192
+      m_Sprite: {fileID: 21300000, guid: 4e4370afe7d4f91438edf215e2e1dd5b, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 21300000, guid: 4e4370afe7d4f91438edf215e2e1dd5b, type: 3}
+    - m_Name: slavek_paw_back
+      m_Hash: 987261994
+      m_Sprite: {fileID: 21300000, guid: 4c96f983d2b528d4ebfe97b9e82a5285, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 21300000, guid: 4c96f983d2b528d4ebfe97b9e82a5285, type: 3}
+    - m_Name: slavek_paw_front
+      m_Hash: 489298050
+      m_Sprite: {fileID: 21300000, guid: 06e9ff9a13d58d74381e83e3eaed5eb4, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 21300000, guid: 06e9ff9a13d58d74381e83e3eaed5eb4, type: 3}
+    - m_Name: slavek_snouth
+      m_Hash: 319194123
+      m_Sprite: {fileID: 21300000, guid: 6e6ba50bd2ec93c4d879f07993f5d7d1, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 21300000, guid: 6e6ba50bd2ec93c4d879f07993f5d7d1, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 5
+  m_PrimaryLibraryGUID: 
+  m_ModificationHash: 638669664847393399
+  m_Version: 1
