@@ -8,11 +8,15 @@ public class Level : MonoBehaviour {
     private const float PipeHeadHeight = 3.75f;
     private const float PipeMoveSpeed = 3f;
     private const float PipeDestroyXPosition = -100f;
+    private const float PipeSpawnXPosition = +100f;
 
     private List<Pipe> _pipeList;
+    private float _pipeSpawnTimer;
+    private float _pipeSpawnTimerMax;
 
     private void Awake() {
         _pipeList = new List<Pipe>();
+        _pipeSpawnTimerMax = 0.5f;
     }
 
     public void Start() {
@@ -21,6 +25,16 @@ public class Level : MonoBehaviour {
 
     public void Update() {
         HandlePipeMovement();
+        HandlePipeSpawning();
+    }
+
+    // ReSharper disable Unity.PerformanceAnalysis
+    private void HandlePipeSpawning() {
+        _pipeSpawnTimer -= Time.deltaTime;
+        if (_pipeSpawnTimer < 0) {
+            _pipeSpawnTimer += _pipeSpawnTimerMax;
+            CreateGapPipes(50f, 20f, PipeSpawnXPosition);
+        }
     }
 
     private void HandlePipeMovement() {
